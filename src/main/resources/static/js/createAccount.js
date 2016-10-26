@@ -5,14 +5,6 @@ function createAccount() {
     else submitAccount(account)
 }
 
-function constructAccount() {
-    var account = {}
-    account.name = $('#name').val()
-    account.address = $('#address').val()
-    account.password = $('#password').val()
-    return account
-}
-
 function submitAccount(account) {
     $.ajax({
         type: "POST",
@@ -33,7 +25,5 @@ function submitAccount(account) {
 }
 
 $(document).ready(function() {
-    $('#submitAccount').click(function() {
-        createAccount()
-    })
+    $('#submitAccount').click(createAccount)
 })

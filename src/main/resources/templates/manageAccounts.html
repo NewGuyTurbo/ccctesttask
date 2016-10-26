@@ -1,14 +1,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <title>Spring Framework Guru</title>
+    <title>Manage accounts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
-    <script src="../static/js/validation.js" th:href="@{js/validation.js}"></script>
+    <script src="../static/js/validation.js" th:src="@{js/validation.js}"></script>
+    <script src="../static/js/main.js" th:src="@{js/main.js}"></script>
+    <script src="../static/js/manageAccounts.js" th:src="@{js/manageAccounts.js}"></script>
 </head>
 <body>
+<body>
     <h1>Hello</h1>
+    <h2>Manage accounts</h2>
     <a href="/createAccount">Create account</a>
     <a href="/manageAccounts">Manage accounts</a>
+
+
+    <div id="users">Users:
+    </div>
+
+
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text"></input>
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <input id="address" type="text"></input>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="text"></input>
+    </div>
+    <div>
+        <input id="href" type="hidden"></input>
+    </div>
+    <div>
+        <button id="submitAccount">Submit</button>
+    </div>
+    <div id="messageBox">
+    </div>
+</body>
 </body>
 </html>
