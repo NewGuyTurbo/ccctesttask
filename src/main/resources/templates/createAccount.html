@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring Framework Guru</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
+    <script src="../static/js/validation.js" th:src="@{js/validation.js}"></script>
+    <script src="../static/js/createAccount.js" th:src="@{js/createAccount.js}"></script>
+</head>
+<body>
+    <h1>Hello</h1>
+    <a href="/createAccount">Create account</a>
+    <a href="/manageAccounts">Manage accounts</a>
+
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text"></input>
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <input id="address" type="text"></input>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="text"></input>
+    </div>
+    <div>
+        <button id="submitAccount">Submit</button>
+    </div>
+    <div id="messageBox">
+    </div>
+</body>
+</html>

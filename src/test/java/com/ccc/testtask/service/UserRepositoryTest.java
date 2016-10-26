@@ -51,5 +51,24 @@ public class UserRepositoryTest {
         Assert.assertEquals(response.getStatusCode(), HttpStatus.NOT_FOUND);
     }
 
+    @Test
+    public void canEditUser() {
+        this.restTemplate.postForEntity(USERS_URL, user, User.class, Collections.emptyMap());
+
+        String newName = "Konstantin";
+        String newAddress = "www leningrad spb tochka ru";
+        String newPass = "123pp321";
+        User editedUser = new User(newName, newPass, newAddress);
+
+        this.restTemplate.put(USERS_URL + "/1", editedUser);
+
+        ResponseEntity<User> response = this.restTemplate.getForEntity(USERS_URL + "/1", User.class, Collections.emptyMap());
+
+        User fetchedUser = response.getBody();
+        Assert.assertEquals(newName, fetchedUser.getName());
+        Assert.assertEquals(newPass, fetchedUser.getPassword());
+        Assert.assertEquals(newAddress, fetchedUser.getAddress());
+    }
+
     //TODO Validation tests
 }
