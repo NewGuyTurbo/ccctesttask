@@ -50,4 +50,6 @@ public class UserRepositoryTest {
         ResponseEntity<User> response = this.restTemplate.getForEntity(USERS_URL + "/1", User.class, Collections.emptyMap());
         Assert.assertEquals(response.getStatusCode(), HttpStatus.NOT_FOUND);
     }
+
+    //TODO Validation tests
 }
